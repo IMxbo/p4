@@ -1,28 +1,5 @@
 #!/bin/bash
 
-mkdir /home/${USER}/p4
-cd /home/${USER}/p4
-
-# shadowsocks
-sudo pip install shadowsocks
-sudo cat > /etc/ss.json << EOF
-	{
-	    "server":"sg1.dawangidc.top",
-	    "server_port":13559,
-	    "local_address":"127.0.0.1",
-	    "local_port":1080,
-	    "password":"1070934011",
-	    "timeout":300,
-	    "method":"chacha20",
-	    "fast_open":false
-	}
-EOF
-sslocal -c /etc/ss.json -d start
-
-#git proxy
-git config --global http.proxy 'socks5://127.0.0.1:1080'
-git config --global https.proxy 'socks5://127.0.0.1:1080'
-
 # Print script commands.
 set -x
 # Exit on errors.
@@ -138,32 +115,38 @@ cd ..
 # Tutorials
 sudo pip install crcmod
 git clone https://github.com/p4lang/tutorials
-
+sudo mv tutorials /home/p4
+sudo chown -R p4:p4 /home/p4/tutorials
 
 # Emacs
 sudo cp p4_16-mode.el /usr/share/emacs/site-lisp/
-sudo mkdir /home/${USER}/.emacs.d/
+sudo mkdir /home/p4/.emacs.d/
 echo "(autoload 'p4_16-mode' \"p4_16-mode.el\" \"P4 Syntax.\" t)" > init.el
 echo "(add-to-list 'auto-mode-alist '(\"\\.p4\\'\" . p4_16-mode))" | tee -a init.el
-sudo mv init.el /home/${USER}/.emacs.d/
-sudo ln -s /usr/share/emacs/site-lisp/p4_16-mode.el /home/${USER}/.emacs.d/p4_16-mode.el
+sudo mv init.el /home/p4/.emacs.d/
+sudo ln -s /usr/share/emacs/site-lisp/p4_16-mode.el /home/p4/.emacs.d/p4_16-mode.el
+sudo chown -R p4:p4 /home/p4/.emacs.d/
 
 # Vim
-cd /home/${USER}/
+cd /home/vagrant
 mkdir .vim
 cd .vim
 mkdir ftdetect
 mkdir syntax
 echo "au BufRead,BufNewFile *.p4      set filetype=p4" >> ftdetect/p4.vim
-echo "set bg=dark" >> /home/${USER}/.vimrc
-cp /home/${USER}/p4/tutorials/vm/p4.vim syntax/p4.vim
-cd /home/${USER}
+echo "set bg=dark" >> /home/vagrant/.vimrc
+sudo mv /home/vagrant/.vimrc /home/p4/.vimrc
+cp /home/vagrant/p4.vim syntax/p4.vim
+cd /home/vagrant
+sudo mv .vim /home/p4/.vim
+sudo chown -R p4:p4 /home/p4/.vim
+sudo chown p4:p4 /home/p4/.vimrc
 
 # Adding Desktop icons
 DESKTOP=/home/${USER}/Desktop
 mkdir -p ${DESKTOP}
 
-cat > ${DESKTOP}/Terminal.desktop << EOF
+cat > ${DESKTOP}/Terminal << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -174,7 +157,7 @@ Exec=/usr/bin/x-terminal-emulator
 Comment[en_US]=
 EOF
 
-cat > ${DESKTOP}/Wireshark.desktop << EOF
+cat > ${DESKTOP}/Wireshark << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -185,7 +168,7 @@ Exec=/usr/bin/wireshark
 Comment[en_US]=
 EOF
 
-cat > ${DESKTOP}/Sublime\ Text.desktop << EOF
+cat > ${DESKTOP}/Sublime\ Text << EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -196,6 +179,9 @@ Exec=/opt/sublime_text/sublime_text
 Comment[en_US]=
 EOF
 
+sudo mkdir -p /home/p4/Desktop
+sudo mv /home/${USER}/Desktop/* /home/p4/Desktop
+sudo chown -R p4:p4 /home/p4/Desktop/
 
 # Do this last!
 sudo reboot

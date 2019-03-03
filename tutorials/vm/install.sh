@@ -1,7 +1,77 @@
 #!/bin/bash
 
-mkdir /home/${USER}/p4
-cd /home/${USER}/p4
+# Print commands and exit on errors
+set -xe
+
+DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:webupd8team/atom
+
+apt-get update
+
+KERNEL=$(uname -r)
+DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o #Dpkg::Options::="--force-confold" upgrade
+apt-get install -y --no-install-recommends \
+  atom \
+  autoconf \
+  automake \
+  bison \
+  build-essential \
+  ca-certificates \
+  cmake \
+  cpp \
+  curl \
+  emacs24 \
+  flex \
+  git \
+  libboost-dev \
+  libboost-filesystem-dev \
+  libboost-iostreams1.58-dev \
+  libboost-program-options-dev \
+  libboost-system-dev \
+  libboost-test-dev \
+  libboost-thread-dev \
+  libc6-dev \
+  libevent-dev \
+  libffi-dev \
+  libfl-dev \
+  libgc-dev \
+  libgc1c2 \
+  libgflags-dev \
+  libgmp-dev \
+  libgmp10 \
+  libgmpxx4ldbl \
+  libjudy-dev \
+  libpcap-dev \
+  libreadline6 \
+  libreadline6-dev \
+  libssl-dev \
+  libtool \
+  linux-headers-$KERNEL\
+  make \
+  mktemp \
+  pkg-config \
+  python \
+  python-dev \
+  python-ipaddr \
+  python-pip \
+  python-psutil \
+  python-scapy \
+  python-setuptools \
+  sublime-text-installer \
+  tcpdump \
+  unzip \
+  vim \
+  wget \
+  xcscope-el \
+  libsodium-dev \
+  xterm
+
+# Disable screensaver
+apt-get -y remove light-locker
+#!/bin/bash
+
+mkdir ~/p4
+cd ~/p4
 
 # shadowsocks
 sudo pip install shadowsocks
@@ -23,10 +93,14 @@ sslocal -c /etc/ss.json -d start
 git config --global http.proxy 'socks5://127.0.0.1:1080'
 git config --global https.proxy 'socks5://127.0.0.1:1080'
 
-# Print script commands.
-set -x
-# Exit on errors.
-set -e
+#python source
+sudo mkdir ~/.pip/
+sudo cat > ~/.pip/pip.conf <<EOF
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host=mirrors.aliyun.com
+EOF
 
 BMV2_COMMIT="7e25eeb19d01eee1a8e982dc7ee90ee438c10a05"
 PI_COMMIT="219b3d67299ec09b49f433d7341049256ab5f512"
@@ -36,8 +110,10 @@ GRPC_COMMIT="v1.3.2"
 
 NUM_CORES=`grep -c ^processor /proc/cpuinfo`
 
+#NUM_CORES = '2'
+
 # Mininet
-git clone git://github.com/mininet/mininet mininet
+git clone https://github.com/mininet/mininet.git mininet
 cd mininet
 sudo ./util/install.sh -nwv
 cd ..
@@ -141,26 +217,26 @@ git clone https://github.com/p4lang/tutorials
 
 
 # Emacs
-sudo cp p4_16-mode.el /usr/share/emacs/site-lisp/
-sudo mkdir /home/${USER}/.emacs.d/
+sudo cp ~/p4/tutorials/vm/p4_16-mode.el /usr/share/emacs/site-lisp/
+sudo mkdir ~/.emacs.d/
 echo "(autoload 'p4_16-mode' \"p4_16-mode.el\" \"P4 Syntax.\" t)" > init.el
 echo "(add-to-list 'auto-mode-alist '(\"\\.p4\\'\" . p4_16-mode))" | tee -a init.el
-sudo mv init.el /home/${USER}/.emacs.d/
-sudo ln -s /usr/share/emacs/site-lisp/p4_16-mode.el /home/${USER}/.emacs.d/p4_16-mode.el
+sudo mv init.el ~/.emacs.d/
+sudo ln -s /usr/share/emacs/site-lisp/p4_16-mode.el ~/.emacs.d/p4_16-mode.el
 
 # Vim
-cd /home/${USER}/
+cd ~/
 mkdir .vim
 cd .vim
 mkdir ftdetect
 mkdir syntax
 echo "au BufRead,BufNewFile *.p4      set filetype=p4" >> ftdetect/p4.vim
-echo "set bg=dark" >> /home/${USER}/.vimrc
-cp /home/${USER}/p4/tutorials/vm/p4.vim syntax/p4.vim
-cd /home/${USER}
+echo "set bg=dark" >> ~/.vimrc
+cp ~/p4/tutorials/vm/p4.vim syntax/p4.vim
+cd ~
 
 # Adding Desktop icons
-DESKTOP=/home/${USER}/Desktop
+DESKTOP=~/Desktop
 mkdir -p ${DESKTOP}
 
 cat > ${DESKTOP}/Terminal.desktop << EOF
@@ -174,6 +250,8 @@ Exec=/usr/bin/x-terminal-emulator
 Comment[en_US]=
 EOF
 
+sudo chmod a+x Terminal.desktop
+
 cat > ${DESKTOP}/Wireshark.desktop << EOF
 [Desktop Entry]
 Encoding=UTF-8
@@ -184,6 +262,8 @@ Icon=wireshark
 Exec=/usr/bin/wireshark
 Comment[en_US]=
 EOF
+
+sudo chmod a+x Wireshark.desktop
 
 cat > ${DESKTOP}/Sublime\ Text.desktop << EOF
 [Desktop Entry]
@@ -196,6 +276,7 @@ Exec=/opt/sublime_text/sublime_text
 Comment[en_US]=
 EOF
 
+sudo chmod a+x Sublime\ Text.desktop
 
 # Do this last!
 sudo reboot
