@@ -4,14 +4,28 @@
 set -xe
 
 DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:webupd8team/atom
+#DEBIAN_FRONTEND=noninteractive sudo add-apt-repository -y ppa:webupd8team/atom
+
+#
+sudo cp /etc/apt/sources.list /etc/apt/sources_init.list
+sudo cat > /etc/apt/sources.list <<EOF
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial universe
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-updates universe
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-updates multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-security universe
+deb http://mirrors.ustc.edu.cn/ubuntu/ xenial-security multiverse
+EOF
 
 apt-get update
 
 KERNEL=$(uname -r)
-DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o #Dpkg::Options::="--force-confold" upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
 apt-get install -y --no-install-recommends \
-  atom \
   autoconf \
   automake \
   bison \
@@ -66,12 +80,19 @@ apt-get install -y --no-install-recommends \
   libsodium-dev \
   xterm
 
-# Disable screensaver
-apt-get -y remove light-locker
-#!/bin/bash
+
 
 mkdir ~/p4
 cd ~/p4
+
+#python source
+sudo mkdir ~/.pip/
+sudo cat > ~/.pip/pip.conf <<EOF
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+[install]
+trusted-host=mirrors.aliyun.com
+EOF
 
 # shadowsocks
 sudo pip install shadowsocks
@@ -93,14 +114,7 @@ sslocal -c /etc/ss.json -d start
 git config --global http.proxy 'socks5://127.0.0.1:1080'
 git config --global https.proxy 'socks5://127.0.0.1:1080'
 
-#python source
-sudo mkdir ~/.pip/
-sudo cat > ~/.pip/pip.conf <<EOF
-[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-[install]
-trusted-host=mirrors.aliyun.com
-EOF
+
 
 BMV2_COMMIT="7e25eeb19d01eee1a8e982dc7ee90ee438c10a05"
 PI_COMMIT="219b3d67299ec09b49f433d7341049256ab5f512"
@@ -111,6 +125,12 @@ GRPC_COMMIT="v1.3.2"
 NUM_CORES=`grep -c ^processor /proc/cpuinfo`
 
 #NUM_CORES = '2'
+
+#swapfile on
+sudo swapoff -a
+sudo dd if=/dev/zero of=/swapfile bs=64M count=64
+sudo mkswap /swapfile
+sudo swapon /swapfile
 
 # Mininet
 git clone https://github.com/mininet/mininet.git mininet
@@ -125,8 +145,8 @@ git checkout ${PROTOBUF_COMMIT}
 export CFLAGS="-Os"
 export CXXFLAGS="-Os"
 export LDFLAGS="-Wl,-s"
-./autogen.sh
-./configure --prefix=/usr
+sudo ./autogen.sh
+sudo ./configure --prefix=/usr
 make -j${NUM_CORES}
 sudo make install
 sudo ldconfig
@@ -171,8 +191,8 @@ git clone https://github.com/p4lang/PI.git
 cd PI
 git checkout ${PI_COMMIT}
 git submodule update --init --recursive
-./autogen.sh
-./configure --with-proto
+sudo ./autogen.sh
+sudo ./configure --with-proto
 make -j${NUM_CORES}
 sudo make install
 sudo ldconfig
@@ -180,15 +200,15 @@ cd ..
 
 # Bmv2
 cd behavioral-model
-./autogen.sh
-./configure --enable-debugger --with-pi
+sudo ./autogen.sh
+sudo ./configure --enable-debugger --with-pi
 make -j${NUM_CORES}
 sudo make install
 sudo ldconfig
 # Simple_switch_grpc target
 cd targets/simple_switch_grpc
-./autogen.sh
-./configure --with-thrift
+sudo ./autogen.sh
+sudo ./configure --with-thrift
 make -j${NUM_CORES}
 sudo make install
 sudo ldconfig
@@ -210,6 +230,11 @@ sudo make install
 sudo ldconfig
 cd ..
 cd ..
+
+#swapoff
+sudo swapoff /swapfile
+sudo rm /swapfile
+
 
 # Tutorials
 sudo pip install crcmod
@@ -250,7 +275,7 @@ Exec=/usr/bin/x-terminal-emulator
 Comment[en_US]=
 EOF
 
-sudo chmod a+x Terminal.desktop
+sudo chmod a+x ${DESKTOP}/Terminal.desktop
 
 cat > ${DESKTOP}/Wireshark.desktop << EOF
 [Desktop Entry]
@@ -263,7 +288,7 @@ Exec=/usr/bin/wireshark
 Comment[en_US]=
 EOF
 
-sudo chmod a+x Wireshark.desktop
+sudo chmod a+x ${DESKTOP}/Wireshark.desktop
 
 cat > ${DESKTOP}/Sublime\ Text.desktop << EOF
 [Desktop Entry]
@@ -276,7 +301,12 @@ Exec=/opt/sublime_text/sublime_text
 Comment[en_US]=
 EOF
 
-sudo chmod a+x Sublime\ Text.desktop
+sudo chmod a+x ${DESKTOP}/Sublime\ Text.desktop
 
 # Do this last!
-sudo reboot
+read -p "please save your work, this computer will reboot after you input 'y': " choice
+if [ "$choice" = 'y' ]||[ "$choice" = 'Y' ];then
+  sudo reboot
+else
+  echo "reboot later manully"
+fi
