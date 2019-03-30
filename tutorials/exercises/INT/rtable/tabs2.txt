@@ -1,0 +1,7 @@
+table_add MyEgress.source_init MyEgress.source_set 1 =>
+table_add MyEgress.int_inst MyEgress.int_set_metadata => 2
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.132 192.168.2.133 6 => 4 1
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.132 192.168.2.133 17 => 4 1
+
+table_add MyEgress.set_counter MyEgress.set_count 1 => 
+

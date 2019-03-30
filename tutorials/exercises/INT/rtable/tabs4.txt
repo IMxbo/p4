@@ -1,0 +1,15 @@
+
+table_add MyEgress.int_inst MyEgress.int_set_metadata => 4
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.131 192.168.2.137 6 => 7 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.131 192.168.2.137 17 => 7 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.137 192.168.2.131 6 => 3 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.137 192.168.2.131 17 => 3 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.132 192.168.2.133 6 => 5 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.132 192.168.2.133 17 => 5 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.133 192.168.2.135 6 => 8 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.133 192.168.2.135 17 => 8 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.135 192.168.2.136 6 => 6 0
+table_add MyIngress.tbl_forward MyIngress.forward 192.168.2.135 192.168.2.136 17 => 6 0
+
+table_add MyEgress.set_counter MyEgress.set_count 1 => 
+

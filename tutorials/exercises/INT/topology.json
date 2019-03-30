@@ -1,0 +1,24 @@
+{
+    "hosts": [
+        "h1",
+        "h2",
+        "h3",
+		"h4",
+		"h5"
+    ],
+    "switches": {
+        "s1": { "cli_input" : "build/int.json" },
+        "s2": { "cli_input" : "build/int.json" },
+        "s3": { "cli_input" : "build/int.json" },
+		"s4": { "cli_input" : "build/int.json" },
+		"s5": { "cli_input" : "build/int.json" }
+    },
+    "links": [
+        ["h1", "s1"], ["h2", "s2"], ["h3", "s3"], 
+		["h4", "s4"], ["h5", "s5"],
+        ["s1", "s2"], ["s1", "s3"], ["s1", "s4"],
+		["s2", "s3"], ["s2", "s5"], 
+        ["s3", "s5"], ["s3", "s4"],
+		["s4", "s5"]
+    ]
+}

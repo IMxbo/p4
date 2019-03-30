@@ -1,0 +1,8 @@
+table_add MyEgress.source_init MyEgress.source_set 1 =>
+table_add MyEgress.int_inst MyEgress.int_set_metadata => 3
+table_add MyIngress.tbl_forward MyIngress.forward 10.0.1.1 10.0.5.5 6 => 5 0
+table_add MyIngress.tbl_forward MyIngress.forward 10.0.1.1 10.0.5.5 17 => 5 0
+table_add MyIngress.tbl_forward MyIngress.forward 10.0.5.5 10.0.1.1 6 => 2 0
+table_add MyIngress.tbl_forward MyIngress.forward 10.0.5.5 10.0.1.1 17 => 2 0
+table_add MyEgress.set_counter MyEgress.set_count 1 => 
+table_add MyEgress.sink_init MyEgress.sink_set 0 => 

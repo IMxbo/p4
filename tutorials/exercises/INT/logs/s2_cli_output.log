@@ -1,0 +1,3658 @@
+Obtaining JSON from switch...
+Done
+Control utility for runtime P4 table manipulation
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "program" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "__meta__" : {
+RuntimeCmd: *** Unknown syntax: "version" : [2, 7],
+RuntimeCmd: *** Unknown syntax: "compiler" : "https://github.com/p4lang/p4c"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "header_types" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "scalars_0",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["tmp", 1, false],
+RuntimeCmd: *** Unknown syntax: ["tmp_0", 32, false],
+RuntimeCmd: *** Unknown syntax: ["_padding_1", 7, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "ethernet_t",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["dstAddr", 48, false],
+RuntimeCmd: *** Unknown syntax: ["srcAddr", 48, false],
+RuntimeCmd: *** Unknown syntax: ["etherType", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "ipv4_t",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["version", 4, false],
+RuntimeCmd: *** Unknown syntax: ["ihl", 4, false],
+RuntimeCmd: *** Unknown syntax: ["diffserv", 8, false],
+RuntimeCmd: *** Unknown syntax: ["totalLen", 16, false],
+RuntimeCmd: *** Unknown syntax: ["identification", 16, false],
+RuntimeCmd: *** Unknown syntax: ["flags", 3, false],
+RuntimeCmd: *** Unknown syntax: ["fragOffset", 13, false],
+RuntimeCmd: *** Unknown syntax: ["ttl", 8, false],
+RuntimeCmd: *** Unknown syntax: ["protocol", 8, false],
+RuntimeCmd: *** Unknown syntax: ["hdrChecksum", 16, false],
+RuntimeCmd: *** Unknown syntax: ["srcAddr", 32, false],
+RuntimeCmd: *** Unknown syntax: ["dstAddr", 32, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "udp_t",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["srcPort", 16, false],
+RuntimeCmd: *** Unknown syntax: ["int_dstPort", 16, false],
+RuntimeCmd: *** Unknown syntax: ["length", 16, false],
+RuntimeCmd: *** Unknown syntax: ["checksum", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "tcp_t",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["srcPort", 16, false],
+RuntimeCmd: *** Unknown syntax: ["int_dstPort", 16, false],
+RuntimeCmd: *** Unknown syntax: ["seqNo", 32, false],
+RuntimeCmd: *** Unknown syntax: ["ackNo", 32, false],
+RuntimeCmd: *** Unknown syntax: ["dataOffset", 4, false],
+RuntimeCmd: *** Unknown syntax: ["res", 3, false],
+RuntimeCmd: *** Unknown syntax: ["ecn", 3, false],
+RuntimeCmd: *** Unknown syntax: ["ctrl", 6, false],
+RuntimeCmd: *** Unknown syntax: ["window", 16, false],
+RuntimeCmd: *** Unknown syntax: ["checksum", 16, false],
+RuntimeCmd: *** Unknown syntax: ["urgentPtr", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 5,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["ver", 2, false],
+RuntimeCmd: *** Unknown syntax: ["rep", 2, false],
+RuntimeCmd: *** Unknown syntax: ["c", 1, false],
+RuntimeCmd: *** Unknown syntax: ["e", 1, false],
+RuntimeCmd: *** Unknown syntax: ["rsvd1", 5, false],
+RuntimeCmd: *** Unknown syntax: ["ins_cnt", 5, false],
+RuntimeCmd: *** Unknown syntax: ["max_hop_cnt", 8, false],
+RuntimeCmd: *** Unknown syntax: ["total_hop_cnt", 8, false],
+RuntimeCmd: *** Unknown syntax: ["instruction_mask_0003", 4, false],
+RuntimeCmd: *** Unknown syntax: ["instruction_mask_0407", 4, false],
+RuntimeCmd: *** Unknown syntax: ["instruction_mask_0811", 4, false],
+RuntimeCmd: *** Unknown syntax: ["instruction_mask_1215", 4, false],
+RuntimeCmd: *** Unknown syntax: ["rsvd2", 16, false],
+RuntimeCmd: *** Unknown syntax: ["int_length", 16, false],
+RuntimeCmd: *** Unknown syntax: ["udp_or_tcp_dstPort", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_switch_id_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 6,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["switch_id", 8, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_ingress_port_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 7,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["ingress_port", 16, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_port_count", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_ingress_global_timestamp_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 8,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["ingress_global_timestamp", 56, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_enq_qdepth_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 9,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["enq_qdepth", 24, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_deq_timedelta_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 10,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["deq_timedelta", 40, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_deq_qdepth_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 11,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["deq_qdepth", 24, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_egress_global_timestamp_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 12,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["egress_global_timestamp", 56, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_egress_port_header_t",
+RuntimeCmd: *** Unknown syntax: "id" : 13,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["egress_port", 16, false],
+RuntimeCmd: *** Unknown syntax: ["egress_port_count", 16, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_meta_t",
+RuntimeCmd: *** Unknown syntax: "id" : 14,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["int_metadata", "*"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "max_length" : 259
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "meta_t",
+RuntimeCmd: *** Unknown syntax: "id" : 15,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["switch_id", 8, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_port", 16, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_global_timestamp", 56, false],
+RuntimeCmd: *** Unknown syntax: ["enq_qdepth", 24, false],
+RuntimeCmd: *** Unknown syntax: ["deq_timedelta", 40, false],
+RuntimeCmd: *** Unknown syntax: ["deq_qdepth", 24, false],
+RuntimeCmd: *** Unknown syntax: ["egress_global_timestamp", 56, false],
+RuntimeCmd: *** Unknown syntax: ["egress_port", 16, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_port_counter_index", 32, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_port_counter_count", 16, false],
+RuntimeCmd: *** Unknown syntax: ["egress_port_counter_index", 32, false],
+RuntimeCmd: *** Unknown syntax: ["egress_port_counter_count", 16, false],
+RuntimeCmd: *** Unknown syntax: ["sport", 16, false],
+RuntimeCmd: *** Unknown syntax: ["dport", 16, false],
+RuntimeCmd: *** Unknown syntax: ["udp_or_tcp_dstPort", 16, false],
+RuntimeCmd: *** Unknown syntax: ["int_flag", 2, false],
+RuntimeCmd: *** Unknown syntax: ["clone_flag", 1, false],
+RuntimeCmd: *** Unknown syntax: ["_padding", 5, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "standard_metadata",
+RuntimeCmd: *** Unknown syntax: "id" : 16,
+RuntimeCmd: *** Unknown syntax: "fields" : [
+RuntimeCmd: *** Unknown syntax: ["ingress_port", 9, false],
+RuntimeCmd: *** Unknown syntax: ["egress_spec", 9, false],
+RuntimeCmd: *** Unknown syntax: ["egress_port", 9, false],
+RuntimeCmd: *** Unknown syntax: ["clone_spec", 32, false],
+RuntimeCmd: *** Unknown syntax: ["instance_type", 32, false],
+RuntimeCmd: *** Unknown syntax: ["drop", 1, false],
+RuntimeCmd: *** Unknown syntax: ["recirculate_port", 16, false],
+RuntimeCmd: *** Unknown syntax: ["packet_length", 32, false],
+RuntimeCmd: *** Unknown syntax: ["enq_timestamp", 32, false],
+RuntimeCmd: *** Unknown syntax: ["enq_qdepth", 19, false],
+RuntimeCmd: *** Unknown syntax: ["deq_timedelta", 32, false],
+RuntimeCmd: *** Unknown syntax: ["deq_qdepth", 19, false],
+RuntimeCmd: *** Unknown syntax: ["ingress_global_timestamp", 48, false],
+RuntimeCmd: *** Unknown syntax: ["egress_global_timestamp", 48, false],
+RuntimeCmd: *** Unknown syntax: ["lf_field_list", 32, false],
+RuntimeCmd: *** Unknown syntax: ["mcast_grp", 16, false],
+RuntimeCmd: *** Unknown syntax: ["resubmit_flag", 32, false],
+RuntimeCmd: *** Unknown syntax: ["egress_rid", 16, false],
+RuntimeCmd: *** Unknown syntax: ["checksum_error", 1, false],
+RuntimeCmd: *** Unknown syntax: ["recirculate_flag", 32, false],
+RuntimeCmd: *** Unknown syntax: ["_padding_0", 5, false]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "headers" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "scalars",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "header_type" : "scalars_0",
+RuntimeCmd: *** Unknown syntax: "metadata" : true,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "standard_metadata",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "header_type" : "standard_metadata",
+RuntimeCmd: *** Unknown syntax: "metadata" : true,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "ethernet",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "header_type" : "ethernet_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "ipv4",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "header_type" : "ipv4_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "udp",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "header_type" : "udp_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "tcp",
+RuntimeCmd: *** Unknown syntax: "id" : 5,
+RuntimeCmd: *** Unknown syntax: "header_type" : "tcp_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_header",
+RuntimeCmd: *** Unknown syntax: "id" : 6,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_switch_id_header",
+RuntimeCmd: *** Unknown syntax: "id" : 7,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_switch_id_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_ingress_port_header",
+RuntimeCmd: *** Unknown syntax: "id" : 8,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_ingress_port_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_ingress_global_timestamp_header",
+RuntimeCmd: *** Unknown syntax: "id" : 9,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_ingress_global_timestamp_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_enq_qdepth_header",
+RuntimeCmd: *** Unknown syntax: "id" : 10,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_enq_qdepth_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_deq_timedelta_header",
+RuntimeCmd: *** Unknown syntax: "id" : 11,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_deq_timedelta_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_deq_qdepth_header",
+RuntimeCmd: *** Unknown syntax: "id" : 12,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_deq_qdepth_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_egress_global_timestamp_header",
+RuntimeCmd: *** Unknown syntax: "id" : 13,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_egress_global_timestamp_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_egress_port_header",
+RuntimeCmd: *** Unknown syntax: "id" : 14,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_egress_port_header_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "int_meta",
+RuntimeCmd: *** Unknown syntax: "id" : 15,
+RuntimeCmd: *** Unknown syntax: "header_type" : "int_meta_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : false,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "userMetadata.meta",
+RuntimeCmd: *** Unknown syntax: "id" : 16,
+RuntimeCmd: *** Unknown syntax: "header_type" : "meta_t",
+RuntimeCmd: *** Unknown syntax: "metadata" : true,
+RuntimeCmd: *** Unknown syntax: "pi_omit" : true
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "header_stacks" : [],
+RuntimeCmd: *** Unknown syntax: "header_union_types" : [],
+RuntimeCmd: *** Unknown syntax: "header_unions" : [],
+RuntimeCmd: *** Unknown syntax: "header_union_stacks" : [],
+RuntimeCmd: *** Unknown syntax: "field_lists" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "name" : "fl",
+RuntimeCmd: *** Unknown syntax: "elements" : []
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "errors" : [
+RuntimeCmd: *** Unknown syntax: ["NoError", 1],
+RuntimeCmd: *** Unknown syntax: ["PacketTooShort", 2],
+RuntimeCmd: *** Unknown syntax: ["NoMatch", 3],
+RuntimeCmd: *** Unknown syntax: ["StackOutOfBounds", 4],
+RuntimeCmd: *** Unknown syntax: ["HeaderTooShort", 5],
+RuntimeCmd: *** Unknown syntax: ["ParserTimeout", 6],
+RuntimeCmd: *** Unknown syntax: ["IPHeaderTooShort", 7]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "enums" : [],
+RuntimeCmd: *** Unknown syntax: "parsers" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "parser",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "init_state" : "start",
+RuntimeCmd: *** Unknown syntax: "parse_states" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "start",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "parser_ops" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "ethernet"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transitions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0800",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : "parse_ipv4"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "value" : "default",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transition_key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ethernet", "etherType"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "parse_ipv4",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "parser_ops" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "ipv4"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["scalars", "tmp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "b2d",
+RuntimeCmd: *** Unknown syntax: "left" : null,
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : ">=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "ihl"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x05"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "d2b",
+RuntimeCmd: *** Unknown syntax: "left" : null,
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["scalars", "tmp"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "7"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "verify"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transitions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x11",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : "parser_udp"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x06",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : "parser_tcp"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "value" : "default",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transition_key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "protocol"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "parser_udp",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "parser_ops" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "udp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "sport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["udp", "srcPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["udp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transitions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x12b6",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : "parser_int_header"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "value" : "default",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transition_key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["udp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "parser_tcp",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "parser_ops" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "tcp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "sport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["tcp", "srcPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["tcp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transitions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x12b6",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : "parser_int_header"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "value" : "default",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transition_key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["tcp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "parser_int_header",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "parser_ops" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "int_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["scalars", "tmp_0"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "<<",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xfff4"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x3"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "set"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "regular",
+RuntimeCmd: *** Unknown syntax: "value" : "int_meta"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["scalars", "tmp_0"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "op" : "extract_VL"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transitions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "value" : "default",
+RuntimeCmd: *** Unknown syntax: "mask" : null,
+RuntimeCmd: *** Unknown syntax: "next_state" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "transition_key" : []
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "parse_vsets" : [],
+RuntimeCmd: *** Unknown syntax: "deparsers" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "deparser",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 677,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "MyDeparser"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "order" : ["ethernet", "ipv4", "udp", "tcp", "int_header", "int_switch_id_header", "int_ingress_port_header", "int_ingress_global_timestamp_header", "int_enq_qdepth_header", "int_deq_timedelta_header", "int_deq_qdepth_header", "int_egress_global_timestamp_header", "int_egress_port_header", "int_meta"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "meter_arrays" : [],
+RuntimeCmd: *** Unknown syntax: "counter_arrays" : [],
+RuntimeCmd: *** Unknown syntax: "register_arrays" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyIngress.ingress_port_counter",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 246,
+RuntimeCmd: *** Unknown syntax: "column" : 29,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "ingress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "size" : 16,
+RuntimeCmd: *** Unknown syntax: "bitwidth" : 16
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.egress_port_counter",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 426,
+RuntimeCmd: *** Unknown syntax: "column" : 29,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "egress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "size" : 16,
+RuntimeCmd: *** Unknown syntax: "bitwidth" : 16
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "calculations" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "calc",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "algo" : "crc16",
+RuntimeCmd: *** Unknown syntax: "input" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "srcAddr"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "dstAddr"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "sport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "protocol"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "calc_0",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "algo" : "crc16",
+RuntimeCmd: *** Unknown syntax: "input" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "srcAddr"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "dstAddr"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "sport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "protocol"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "calc_1",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 655,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "update_checksum( ..."
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "algo" : "csum16",
+RuntimeCmd: *** Unknown syntax: "input" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "version"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "ihl"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "diffserv"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "totalLen"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "identification"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "flags"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "fragOffset"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "ttl"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "protocol"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "srcAddr"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "dstAddr"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "learn_lists" : [],
+RuntimeCmd: *** Unknown syntax: "actions" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "NoAction",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : []
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyIngress.drop",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "drop",
+RuntimeCmd: *** Unknown syntax: "parameters" : [],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 249,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "mark_to_drop()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyIngress.forward",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "port",
+RuntimeCmd: *** Unknown syntax: "bitwidth" : 9
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "flag",
+RuntimeCmd: *** Unknown syntax: "bitwidth" : 2
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "egress_spec"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "runtime_data",
+RuntimeCmd: *** Unknown syntax: "value" : 0
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 266,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "standard_metadata.egress_spec = port"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x12b6"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 267,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.udp_or_tcp_dstPort = 4790"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "int_flag"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "runtime_data",
+RuntimeCmd: *** Unknown syntax: "value" : 1
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 268,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.int_flag = flag"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "clone_flag"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x01"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 269,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.clone_flag = 1"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "modify_field_with_hash_based_offset",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0000"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "calculation",
+RuntimeCmd: *** Unknown syntax: "value" : "calc"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00000010"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 253,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hash(meta.meta.ingress_port_counter_index, HashAlgorithm.crc16, ..."
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "register_read",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "register_array",
+RuntimeCmd: *** Unknown syntax: "value" : "MyIngress.ingress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 260,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "ingress_port_counter.read(meta.meta.ingress_port_counter_count,meta.meta.ingress_port_counter_index)"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0001"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 261,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.ingress_port_counter_count=meta.meta.ingress_port_counter_count+1"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "register_write",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "register_array",
+RuntimeCmd: *** Unknown syntax: "value" : "MyIngress.ingress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 262,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "ingress_port_counter.write(meta.meta.ingress_port_counter_index,meta.meta.ingress_port_counter_count)"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "act",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "clone_ingress_pkt_to_egress",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x000001f4"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x1"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "NoAction",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : []
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "NoAction",
+RuntimeCmd: *** Unknown syntax: "id" : 5,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : []
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "NoAction",
+RuntimeCmd: *** Unknown syntax: "id" : 6,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : []
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.source_set",
+RuntimeCmd: *** Unknown syntax: "id" : 7,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 313,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "ver"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 314,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.ver=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "rep"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 315,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.rep=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "c"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 316,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.c=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "e"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 317,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.e=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "rsvd1"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 318,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.rsvd1=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "ins_cnt"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x08"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 319,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.ins_cnt=8"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "max_hop_cnt"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x05"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 320,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.max_hop_cnt=5"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "total_hop_cnt"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 321,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.total_hop_cnt=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0003"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0f"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 322,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.instruction_mask_0003=15"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0407"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0f"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 323,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.instruction_mask_0407=15"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0811"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 324,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.instruction_mask_0811=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_1215"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 325,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.instruction_mask_1215=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "rsvd2"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0000"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 326,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.rsvd2=0"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x000c"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 327,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=12"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 328,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.udp_or_tcp_dstPort=meta.meta.dport"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["udp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 307,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.udp.int_dstPort=meta.meta.udp_or_tcp_dstPort"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["tcp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 308,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.tcp.int_dstPort=meta.meta.udp_or_tcp_dstPort"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_0",
+RuntimeCmd: *** Unknown syntax: "id" : 8,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_switch_id_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 345,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_switch_id_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_switch_id_header", "switch_id"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "switch_id"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 346,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_switch_id_header.switch_id=meta.meta.switch_id"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0001"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 347,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+1"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_1",
+RuntimeCmd: *** Unknown syntax: "id" : 9,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_ingress_port_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 351,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_port_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_ingress_port_header", "ingress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 352,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_port_header.ingress_port=meta.meta.ingress_port"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_ingress_port_header", "ingress_port_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 353,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_port_header.ingress_port_count=meta.meta.ingress_port_counter_count"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0004"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 354,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+4"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_2",
+RuntimeCmd: *** Unknown syntax: "id" : 10,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_ingress_global_timestamp_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 358,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_global_timestamp_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_ingress_global_timestamp_header", "ingress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 359,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_global_timestamp_header.ingress_global_timestamp=meta.meta.ingress_global_timestamp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0007"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 360,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+7"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_3",
+RuntimeCmd: *** Unknown syntax: "id" : 11,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_enq_qdepth_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 364,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_enq_qdepth_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_enq_qdepth_header", "enq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "enq_qdepth"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 365,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_enq_qdepth_header.enq_qdepth=meta.meta.enq_qdepth"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0003"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 366,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+3"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_4",
+RuntimeCmd: *** Unknown syntax: "id" : 12,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_deq_timedelta_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 370,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_timedelta_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_deq_timedelta_header", "deq_timedelta"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "deq_timedelta"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 371,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_timedelta_header.deq_timedelta=meta.meta.deq_timedelta"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0005"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 372,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+5"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_5",
+RuntimeCmd: *** Unknown syntax: "id" : 13,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_deq_qdepth_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 376,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_qdepth_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_deq_qdepth_header", "deq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "deq_qdepth"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 377,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_qdepth_header.deq_qdepth=meta.meta.deq_qdepth"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0003"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 378,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+3"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_6",
+RuntimeCmd: *** Unknown syntax: "id" : 14,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_egress_global_timestamp_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 382,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_global_timestamp_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_egress_global_timestamp_header", "egress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 383,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_global_timestamp_header.egress_global_timestamp=meta.meta.egress_global_timestamp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0007"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 384,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+7"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_header_7",
+RuntimeCmd: *** Unknown syntax: "id" : 15,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "add_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_egress_port_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 388,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_port_header.setValid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_egress_port_header", "egress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 389,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_port_header.egress_port=meta.meta.egress_port"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_egress_port_header", "egress_port_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 390,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_port_header.egress_port_count=meta.meta.egress_port_counter_count"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "int_length"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0004"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 391,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.int_length=hdr.int_header.int_length+4"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_set_metadata",
+RuntimeCmd: *** Unknown syntax: "id" : 16,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "switch_id",
+RuntimeCmd: *** Unknown syntax: "bitwidth" : 8
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "switch_id"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "runtime_data",
+RuntimeCmd: *** Unknown syntax: "value" : 0
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 442,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.switch_id=switch_id"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "ingress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 443,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.ingress_port=(bit<16>)standard_metadata.ingress_port"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "ingress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "egress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffffffffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 444,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.ingress_global_timestamp=(bit<56>)standard_metadata.egress_global_timestamp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "enq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "enq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 445,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.enq_qdepth=(bit<24>)standard_metadata.enq_qdepth"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "deq_timedelta"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "deq_timedelta"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 446,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.deq_timedelta=(bit<40>)standard_metadata.deq_timedelta"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "deq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "deq_qdepth"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 447,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.deq_qdepth=(bit<24>)standard_metadata.deq_qdepth"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "ingress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffffffffffffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 448,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.egress_global_timestamp=(bit<56>)standard_metadata.ingress_global_timestamp"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["standard_metadata", "egress_port"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 449,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.egress_port=(bit<16>)standard_metadata.egress_port"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "udp_or_tcp_dstPort"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 450,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.dport=hdr.int_header.udp_or_tcp_dstPort"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "modify_field_with_hash_based_offset",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0000"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "calculation",
+RuntimeCmd: *** Unknown syntax: "value" : "calc_0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00000010"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 429,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hash(meta.meta.egress_port_counter_index, HashAlgorithm.crc16, ..."
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "register_read",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "register_array",
+RuntimeCmd: *** Unknown syntax: "value" : "MyEgress.egress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 436,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "egress_port_counter.read(meta.meta.egress_port_counter_count,meta.meta.egress_port_counter_index)"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "+",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x0001"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0xffff"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 437,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.egress_port_counter_count=meta.meta.egress_port_counter_count+1"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "register_write",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "register_array",
+RuntimeCmd: *** Unknown syntax: "value" : "MyEgress.egress_port_counter"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_index"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "egress_port_counter_count"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 438,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "egress_port_counter.write(meta.meta.egress_port_counter_index,meta.meta.egress_port_counter_count)"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.sink_set",
+RuntimeCmd: *** Unknown syntax: "id" : 17,
+RuntimeCmd: *** Unknown syntax: "runtime_data" : [],
+RuntimeCmd: *** Unknown syntax: "primitives" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 578,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_meta"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 579,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_meta.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_switch_id_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 580,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_switch_id_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_ingress_port_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 581,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_port_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_ingress_global_timestamp_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 582,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_ingress_global_timestamp_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_enq_qdepth_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 583,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_enq_qdepth_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_deq_timedelta_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 584,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_timedelta_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_deq_qdepth_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 585,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_deq_qdepth_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_egress_global_timestamp_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 586,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_global_timestamp_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "remove_header",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "header",
+RuntimeCmd: *** Unknown syntax: "value" : "int_egress_port_header"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 587,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_egress_port_header.setInvalid()"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["udp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 573,
+RuntimeCmd: *** Unknown syntax: "column" : 1,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.udp.int_dstPort=meta.meta.dport"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "op" : "assign",
+RuntimeCmd: *** Unknown syntax: "parameters" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["tcp", "int_dstPort"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "dport"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 574,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.tcp.int_dstPort=meta.meta.dport"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "pipelines" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "ingress",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 243,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "MyIngress"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "init_table" : "node_2",
+RuntimeCmd: *** Unknown syntax: "tables" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyIngress.tbl_forward",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 274,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "tbl_forward"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "name" : "hdr.ipv4.srcAddr",
+RuntimeCmd: *** Unknown syntax: "target" : ["ipv4", "srcAddr"],
+RuntimeCmd: *** Unknown syntax: "mask" : null
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "name" : "hdr.ipv4.dstAddr",
+RuntimeCmd: *** Unknown syntax: "target" : ["ipv4", "dstAddr"],
+RuntimeCmd: *** Unknown syntax: "mask" : null
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "name" : "hdr.ipv4.protocol",
+RuntimeCmd: *** Unknown syntax: "target" : ["ipv4", "protocol"],
+RuntimeCmd: *** Unknown syntax: "mask" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [2, 1, 0],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyIngress.forward", "MyIngress.drop", "NoAction"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_4",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyIngress.forward" : "node_4",
+RuntimeCmd: *** Unknown syntax: "MyIngress.drop" : "node_4",
+RuntimeCmd: *** Unknown syntax: "NoAction" : "node_4"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 0,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "tbl_act",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [3],
+RuntimeCmd: *** Unknown syntax: "actions" : ["act"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : null,
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "act" : null
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 3,
+RuntimeCmd: *** Unknown syntax: "action_const" : true,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : true
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "action_profiles" : [],
+RuntimeCmd: *** Unknown syntax: "conditionals" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_2",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 290,
+RuntimeCmd: *** Unknown syntax: "column" : 12,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.ipv4.isValid()"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "d2b",
+RuntimeCmd: *** Unknown syntax: "left" : null,
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "$valid$"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyIngress.tbl_forward",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_4"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_4",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 293,
+RuntimeCmd: *** Unknown syntax: "column" : 5,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "meta.meta.int_flag==2"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "==",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["userMetadata.meta", "int_flag"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x02"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "false_next" : null,
+RuntimeCmd: *** Unknown syntax: "true_next" : "tbl_act"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "egress",
+RuntimeCmd: *** Unknown syntax: "id" : 1,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 303,
+RuntimeCmd: *** Unknown syntax: "column" : 8,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "MyEgress"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "init_table" : "MyEgress.source_init",
+RuntimeCmd: *** Unknown syntax: "tables" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.source_init",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 332,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "source_init"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "name" : "meta.meta.int_flag",
+RuntimeCmd: *** Unknown syntax: "target" : ["userMetadata.meta", "int_flag"],
+RuntimeCmd: *** Unknown syntax: "mask" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [7, 4],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.source_set", "NoAction"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_9",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.source_set" : "node_9",
+RuntimeCmd: *** Unknown syntax: "NoAction" : "node_9"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 4,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 454,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [16, 5],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_metadata", "NoAction"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_11",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_metadata" : "node_11",
+RuntimeCmd: *** Unknown syntax: "NoAction" : "node_11"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 5,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_0",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 460,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [8],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_0"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_13",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_0" : "node_13"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 8,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_1",
+RuntimeCmd: *** Unknown syntax: "id" : 5,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 467,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_1"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [9],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_1"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_15",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_1" : "node_15"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 9,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_2",
+RuntimeCmd: *** Unknown syntax: "id" : 6,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 474,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_2"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [10],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_2"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_17",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_2" : "node_17"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 10,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_3",
+RuntimeCmd: *** Unknown syntax: "id" : 7,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 481,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_3"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [11],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_3"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_19",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_3" : "node_19"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 11,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_4",
+RuntimeCmd: *** Unknown syntax: "id" : 8,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 488,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_4"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [12],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_4"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_21",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_4" : "node_21"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 12,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_5",
+RuntimeCmd: *** Unknown syntax: "id" : 9,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 495,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_5"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [13],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_5"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_23",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_5" : "node_23"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 13,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_6",
+RuntimeCmd: *** Unknown syntax: "id" : 10,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 502,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_6"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [14],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_6"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "node_25",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_6" : "node_25"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 14,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.int_inst_7",
+RuntimeCmd: *** Unknown syntax: "id" : 11,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 509,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "int_inst_7"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [15],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.int_set_header_7"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : "MyEgress.sink_init",
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.int_set_header_7" : "MyEgress.sink_init"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 15,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "MyEgress.sink_init",
+RuntimeCmd: *** Unknown syntax: "id" : 12,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 591,
+RuntimeCmd: *** Unknown syntax: "column" : 10,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "sink_init"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "key" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "name" : "meta.meta.clone_flag",
+RuntimeCmd: *** Unknown syntax: "target" : ["userMetadata.meta", "clone_flag"],
+RuntimeCmd: *** Unknown syntax: "mask" : null
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "match_type" : "exact",
+RuntimeCmd: *** Unknown syntax: "type" : "simple",
+RuntimeCmd: *** Unknown syntax: "max_size" : 1024,
+RuntimeCmd: *** Unknown syntax: "with_counters" : false,
+RuntimeCmd: *** Unknown syntax: "support_timeout" : false,
+RuntimeCmd: *** Unknown syntax: "direct_meters" : null,
+RuntimeCmd: *** Unknown syntax: "action_ids" : [17, 6],
+RuntimeCmd: *** Unknown syntax: "actions" : ["MyEgress.sink_set", "NoAction"],
+RuntimeCmd: *** Unknown syntax: "base_default_next" : null,
+RuntimeCmd: *** Unknown syntax: "next_tables" : {
+RuntimeCmd: *** Unknown syntax: "MyEgress.sink_set" : null,
+RuntimeCmd: *** Unknown syntax: "NoAction" : null
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "default_entry" : {
+RuntimeCmd: *** Unknown syntax: "action_id" : 6,
+RuntimeCmd: *** Unknown syntax: "action_const" : false,
+RuntimeCmd: *** Unknown syntax: "action_data" : [],
+RuntimeCmd: *** Unknown syntax: "action_entry_const" : false
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "action_profiles" : [],
+RuntimeCmd: *** Unknown syntax: "conditionals" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_9",
+RuntimeCmd: *** Unknown syntax: "id" : 2,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 604,
+RuntimeCmd: *** Unknown syntax: "column" : 4,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "hdr.int_header.isValid()"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "d2b",
+RuntimeCmd: *** Unknown syntax: "left" : null,
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "$valid$"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst",
+RuntimeCmd: *** Unknown syntax: "false_next" : "MyEgress.sink_init"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_11",
+RuntimeCmd: *** Unknown syntax: "id" : 3,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 607,
+RuntimeCmd: *** Unknown syntax: "column" : 12,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0003 & 0x8) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0003"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x08"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_0",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_13"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_13",
+RuntimeCmd: *** Unknown syntax: "id" : 4,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 609,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0003 & 0x4) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0003"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x04"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_1",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_15"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_15",
+RuntimeCmd: *** Unknown syntax: "id" : 5,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 611,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0003 & 0x2) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0003"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x02"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_2",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_17"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_17",
+RuntimeCmd: *** Unknown syntax: "id" : 6,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 613,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0003 & 0x1) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0003"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x01"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_3",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_19"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_19",
+RuntimeCmd: *** Unknown syntax: "id" : 7,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 615,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0407 & 0x8) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0407"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x08"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_4",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_21"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_21",
+RuntimeCmd: *** Unknown syntax: "id" : 8,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 617,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0407 & 0x4) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0407"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x04"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_5",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_23"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_23",
+RuntimeCmd: *** Unknown syntax: "id" : 9,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 619,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0407 & 0x2) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0407"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x02"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_6",
+RuntimeCmd: *** Unknown syntax: "false_next" : "node_25"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "node_25",
+RuntimeCmd: *** Unknown syntax: "id" : 10,
+RuntimeCmd: *** Unknown syntax: "source_info" : {
+RuntimeCmd: *** Unknown syntax: "filename" : "int.p4",
+RuntimeCmd: *** Unknown syntax: "line" : 621,
+RuntimeCmd: *** Unknown syntax: "column" : 14,
+RuntimeCmd: *** Unknown syntax: "source_fragment" : "(hdr.int_header.instruction_mask_0407 & 0x1) != 0"
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "expression" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "!=",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "&",
+RuntimeCmd: *** Unknown syntax: "left" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["int_header", "instruction_mask_0407"]
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x01"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "hexstr",
+RuntimeCmd: *** Unknown syntax: "value" : "0x00"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: },
+RuntimeCmd: *** Unknown syntax: "true_next" : "MyEgress.int_inst_7",
+RuntimeCmd: *** Unknown syntax: "false_next" : "MyEgress.sink_init"
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "checksums" : [
+RuntimeCmd: *** Unknown syntax: {
+RuntimeCmd: *** Unknown syntax: "name" : "cksum",
+RuntimeCmd: *** Unknown syntax: "id" : 0,
+RuntimeCmd: *** Unknown syntax: "target" : ["ipv4", "hdrChecksum"],
+RuntimeCmd: *** Unknown syntax: "type" : "generic",
+RuntimeCmd: *** Unknown syntax: "calculation" : "calc_1",
+RuntimeCmd: *** Unknown syntax: "if_cond" : {
+RuntimeCmd: *** Unknown syntax: "type" : "expression",
+RuntimeCmd: *** Unknown syntax: "value" : {
+RuntimeCmd: *** Unknown syntax: "op" : "d2b",
+RuntimeCmd: *** Unknown syntax: "left" : null,
+RuntimeCmd: *** Unknown syntax: "right" : {
+RuntimeCmd: *** Unknown syntax: "type" : "field",
+RuntimeCmd: *** Unknown syntax: "value" : ["ipv4", "$valid$"]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: "force_arith" : [],
+RuntimeCmd: *** Unknown syntax: "extern_instances" : [],
+RuntimeCmd: *** Unknown syntax: "field_aliases" : [
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "queueing_metadata.enq_timestamp",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "enq_timestamp"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "queueing_metadata.enq_qdepth",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "enq_qdepth"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "queueing_metadata.deq_timedelta",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "deq_timedelta"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "queueing_metadata.deq_qdepth",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "deq_qdepth"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.ingress_global_timestamp",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "ingress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.egress_global_timestamp",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "egress_global_timestamp"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.lf_field_list",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "lf_field_list"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.mcast_grp",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "mcast_grp"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.resubmit_flag",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "resubmit_flag"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.egress_rid",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "egress_rid"]
+RuntimeCmd: *** Unknown syntax: ],
+RuntimeCmd: *** Unknown syntax: [
+RuntimeCmd: *** Unknown syntax: "intrinsic_metadata.recirculate_flag",
+RuntimeCmd: *** Unknown syntax: ["standard_metadata", "recirculate_flag"]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: ]
+RuntimeCmd: *** Unknown syntax: }
+RuntimeCmd: 
